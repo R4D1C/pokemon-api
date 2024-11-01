@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Pokémon API</title>
+</head>
+<body>
+    <div class="background">
+        <div class="mainContainer">
+            <div class="searchContainer">
+                <input id="search-input" type="text">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="result-container">
+                <div class="pokemon-overview">
+                    <div class="pokemon-main-overview">
+                        <h2 id="pokemon-name">Pokemon Name</h2>
+                        <p id="pokemon-id">#ID</p>
+                        <div id="pokemon-img-container"></div>
+                    </div>
+                    <p id="weight"></p>
+                    <p id="height"></p>
+                    <div id="types"></div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="table-name">Base</td>
+                            <td class="table-data">Stats</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-name">HP</td>
+                            <td class="table-data" id="hp"></td>
+                        </tr>
+                        <tr>
+                            <td class="table-name">Attack</td>
+                            <td class="table-data" id="attack"></td>
+                        </tr>
+                        <tr>
+                            <td class="table-name">Defense</td>
+                            <td class="table-data" id="defense"></td>
+                        </tr>
+                        <tr>
+                            <td class="table-name">Special Attack</td>
+                            <td class="table-data" id="special-attack"></td>
+                        </tr>
+                        <tr>
+                            <td class="table-name">Special Defense</td>
+                            <td class="table-data" id="special-defense"></td>
+                        </tr>
+                        <tr>
+                            <td class="table-name">Speed</td>
+                            <td class="table-data" id="speed"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="background-elements">
+            <img class="trainer" src="./IMG/human-Photoroom.png" alt="pokemon trainer">
+        </div>
+    </div>
+    <script src="./script.js">
+
+    </script>
+</body>
+</html>
