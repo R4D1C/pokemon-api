@@ -34,6 +34,7 @@ input {
     height: 30px;
     border-radius: 10px;
     padding: 5px;
+    color: azure;
 }
 
 button {
@@ -54,7 +55,7 @@ button:active {
     background-color: azure;
     border-radius: 15px 15px 0 0;
     border-bottom: 4px solid black;
-    padding-left: 20px;
+    padding: 5px 20px;
 }
 
 .pokemon-main-overview > p {
@@ -83,7 +84,7 @@ td {
     z-index: 3;
     background-color: #A461AB;
     border-radius: 5px;
-    vertical-align: middle;
+    text-align: center;
 }
 
 .table-data {
@@ -92,7 +93,7 @@ td {
 
 .table-name {
     padding: 10px 20px;
-    text-align: center;
+    text-align: right;
 }
 
 .pokemon-overview {
@@ -105,6 +106,11 @@ td {
     background-color: #8173ac;
     border-radius: 15px;
     opacity: .9;
+}
+
+#pokemon-name {
+    text-transform: uppercase;
+    font-size: 20px;
 }
 
 #weight {
@@ -127,9 +133,9 @@ td {
 
 .trainer {
     position: absolute;
-    width: 600px;
+    width: 400px;
     height: 600px;
-    right: -110px;
+    right: -20px;
     bottom: -158px;
     z-index: 0;
 }
@@ -141,11 +147,11 @@ td {
     height: 200px;
 }
 
-#pokemon-img {
+.sprite {
     display: block;
     margin: 0 auto;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
 
 #types {
@@ -243,4 +249,82 @@ td {
 
 .fairy-type {
     background-color: #F0B6BC;
+}
+
+@media only screen and (max-width: 360px) {
+    .background {
+        width: 360px;
+        height: 100%;
+    }
+
+    .result-container {
+        width: 300px;
+        height: 600;
+        margin: 0;
+    }
+
+    .pokemon-overview {
+        width: 300px;
+        height: 240px;
+    }
+
+    input {
+        width: 160px;
+    }
+
+    #types {
+        width: 300px;
+        height: 40px;
+    }
+
+    .type {
+        height: 20px;
+        margin: 2px;
+        font-size: 14px;
+        padding: 2px 6px;
+    }
+
+    .trainer {
+        width: 300px;
+        height: 422px;
+        right: -80px;
+        bottom: -120px;
+    }
+
+    table {
+        width: 300px;
+        height: 280px;
+        font-size: 16px;
+    }
+
+    .table-name {
+        padding: 2px 20px;
+        width: 100px;
+        font-size: 14px;
+    }
+
+    .table-data {
+        padding: 6px 20px;
+    }
+
+    .table-name > td {
+        width: 140px;
+    }
+
+    .sprite {
+        width: 160px;
+        height: 160px;
+    }
+
+    #weight, #height {
+        font-size: 12px;
+    }
+
+    #weight {
+        bottom: 4px;
+    }
+
+    #height {
+        bottom: 20px;
+    }
 }

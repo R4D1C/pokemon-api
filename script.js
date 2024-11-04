@@ -13,37 +13,17 @@ const pokeSpeed = document.getElementById("speed");
 const pokeImage = document.getElementById("pokemon-img-container");
 const api = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/";
 
-const fetchData = async () => {
-    const searchInp = document.getElementById("search-input").value.toLowerCase();
+const fetchData = () => {
 
-    try {
-        const res = await fetch(api);
-        const data = await res.json();
-        const findedPokemon = data.results.find(pokemon => pokemon.name.includes(searchInp));
-
-        if (findedPokemon) {
-            const redirectPokemon = api + findedPokemon.name;
-            console.log(redirectPokemon)
-            return redirectPokemon
-        } else {
-            return null
-        }
-    } catch (err){
-        console.log(err);
-    }
 }
 
 const printStats = async () => {
+    const searchInp = document.getElementById("search-input").value.toLowerCase();
+    const pokeUrl = api + (isNaN(searchInp) ? searchInp : Number(searchInp));
     try {
-        const pokeUrl = await fetchData();
-        if (!pokeUrl) {
-            alert("Flaco eso no existe")
-            return
-        }
         fetch(pokeUrl)
-            .then(resp => resp.json())
+            .then(resp => resp.ok ? resp.json() : alert("Pokémon not found"))
             .then(data => {
-                console.log(data)
                 const {name,id} = data;
                 const dataStats = data.stats;
                 const dataTypes = data.types;
@@ -57,7 +37,7 @@ const printStats = async () => {
                 pokeSpeed.innerText = dataStats[5].base_stat;
                 pokeHeight.innerText = "Height: " + data.height;
                 pokeWeight.innerText = "Weight: " + data.weight;
-                pokeImage.innerHTML = `<img class="pokemon-img" src="${data.sprites.front_default}">`;
+                pokeImage.innerHTML = `<img class="sprite" src="${data.sprites.front_default}">`;
                 pokeTypes.innerHTML = "";
                 dataTypes.forEach(el => {
                     pokeTypes.innerHTML += `<div class="type ${el.type.name}-type">${el.type.name}</div>`
@@ -69,3 +49,28 @@ const printStats = async () => {
 }
 
 searchBtn.addEventListener("click", printStats)
+
+
+/* const fetchData = async () => {
+    const searchInp = document.getElementById("search-input").value.toLowerCase();
+
+    try {
+        const res = await fetch(api);
+        const data = await res.json();
+        const findedPokemon = data.results.find(pokemon => pokemon.name.includes(searchInp));
+
+        if (findedPokemon) {
+            const redirectPokemon = api + isNaN();
+            console.log(redirectPokemon)
+            return redirectPokemon
+        } else {
+            return null
+        }
+    } catch (err){
+        console.log(err);
+    }
+} 
+    
+QUE ESTÚPIDO, SI LA API BUSCA SOLA, PARA QUE HICE ESTA FUNCIÓN QUE BUSCA DENTRO DE LA MISMA???
+
+*/
