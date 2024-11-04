@@ -13,10 +13,6 @@ const pokeSpeed = document.getElementById("speed");
 const pokeImage = document.getElementById("pokemon-img-container");
 const api = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/";
 
-const fetchData = () => {
-
-}
-
 const printStats = async () => {
     const searchInp = document.getElementById("search-input").value.toLowerCase();
     const pokeUrl = api + (isNaN(searchInp) ? searchInp : Number(searchInp));
@@ -37,7 +33,7 @@ const printStats = async () => {
                 pokeSpeed.innerText = dataStats[5].base_stat;
                 pokeHeight.innerText = "Height: " + data.height;
                 pokeWeight.innerText = "Weight: " + data.weight;
-                pokeImage.innerHTML = `<img class="sprite" src="${data.sprites.front_default}">`;
+                pokeImage.innerHTML = `<img id="sprite" src="${data.sprites.front_default}">`;
                 pokeTypes.innerHTML = "";
                 dataTypes.forEach(el => {
                     pokeTypes.innerHTML += `<div class="type ${el.type.name}-type">${el.type.name}</div>`

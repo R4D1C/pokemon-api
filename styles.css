@@ -147,7 +147,7 @@ td {
     height: 200px;
 }
 
-.sprite {
+#sprite {
     display: block;
     margin: 0 auto;
     width: 200px;
@@ -311,7 +311,7 @@ td {
         width: 140px;
     }
 
-    .sprite {
+    #sprite {
         width: 160px;
         height: 160px;
     }
